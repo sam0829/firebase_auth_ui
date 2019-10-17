@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-0.3.2/android/admob_flutter.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/admob_flutter-0.3.2/android/admob_flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example/android/android.iml" filepath="$PROJECT_DIR$/../example/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../notw/android/app/android-app.iml" filepath="$PROJECT_DIR$/../../../notw/android/app/android-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example/android/app/app.iml" filepath="$PROJECT_DIR$/../example/android/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.12.9+4/android/cloud_firestore.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.12.9+4/android/cloud_firestore.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.4/android/connectivity.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.4/android/connectivity.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+5/android/firebase_auth.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+5/android/firebase_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/firebase_auth_ui.iml" filepath="$PROJECT_DIR$/firebase_auth_ui.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/android/firebase_core.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/android/firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../notw/android/notw-android.iml" filepath="$PROJECT_DIR$/../../../notw/android/notw-android.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.2+3/android/share.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.2+3/android/share.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+4/android/shared_preferences.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+4/android/shared_preferences.iml" />
+      <module fileurl="file://$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.1.4/android/url_launcher.iml" filepath="$USER_HOME$/Library/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.1.4/android/url_launcher.iml" />
+    </modules>
+  </component>
+</project>
