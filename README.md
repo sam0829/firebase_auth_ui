@@ -39,14 +39,15 @@ void logout() async {
 ```
 
 Plugin returns `FirebaseUser` with following details:
-| Field | Description |
-| --- | --- |
-| uid | UID of authenticated user |
-| displayName | Display name of user |
-| email | Email of user |
-| phoneNumber | Phone number of user |
-| photoUri | URI of user's photo |
-| providerId | Indicates through which provider user was authenticated. |
+
+Field | Description |
+ --- | --- |
+ uid | UID of authenticated user |
+ displayName | Display name of user |
+ email | Email of user |
+ phoneNumber | Phone number of user |
+ photoUri | URI of user's photo |
+ providerId | Indicates through which provider user was authenticated. |
 
 Please note that above details may be null depending on the provider user used to sign and user's privacy settings on respective provider.
 

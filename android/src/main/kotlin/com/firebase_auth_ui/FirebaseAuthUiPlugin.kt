@@ -83,10 +83,10 @@ class FirebaseAuthUiPlugin(private val activity: Activity) : MethodCallHandler, 
     override fun onMethodCall(call: MethodCall, result: Result) {
         when (call.method) {
             "launchFlow" -> {
-                val authProviders = call.argument<List<String>>("src.providers")
+                val authProviders = call.argument<List<String>>("providers")
 
                 if (authProviders?.isEmpty() == true) {
-                    result.error(ERROR_INITIALIZATION, "Please pass src.providers.", null)
+                    result.error(ERROR_INITIALIZATION, "Please pass providers.", null)
                     return
                 }
                 val tos = call.argument<String>("tos")
@@ -109,9 +109,6 @@ class FirebaseAuthUiPlugin(private val activity: Activity) : MethodCallHandler, 
 
     private fun getProviders(authProviders: List<String>?): List<AuthUI.IdpConfig> {
         val providers = mutableListOf<AuthUI.IdpConfig>()
-        GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .requestProfile()
         authProviders?.forEach {
             when (it) {
                 "password" -> providers.add(AuthUI.IdpConfig.EmailBuilder().build())
