@@ -1,3 +1,6 @@
+## 0.0.3
+* Add Twitter login support
+
 ## 0.0.2
 * Fix facebook and google providers not appearing + Updated README
 
