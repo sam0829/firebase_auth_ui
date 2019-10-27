@@ -22,6 +22,7 @@ A flutter plugin for Firebase Auth UI
   s.dependency 'FirebaseUI/Email'
   s.dependency 'FirebaseUI/Facebook'
   s.dependency 'FirebaseUI/Google'
+  s.dependency 'FirebaseUI/OAuth'
   s.dependency 'FBSDKCoreKit'
 
   s.ios.deployment_target = '8.0'

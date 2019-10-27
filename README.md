@@ -22,6 +22,7 @@ FirebaseAuthUi.instance()
             AuthProvider.email(), // Login/Sign up with Email and password
             AuthProvider.google(), // Login with Google
             AuthProvider.facebook(), // Login with Facebook
+	        AuthProvider.twitter(), // Login with Twitter
           ],
           tosUrl: "https://my-terms-url", // Optional
           privacyPolicyUrl: "https://my-privacy-policy", // Optional,
@@ -55,7 +56,7 @@ If you want to have full `FirebaseUser` object then please add [firebase_auth](h
 
 ## Configuration
 Create a project on Firebase console and add Android and iOS platform in **Settings > Your apps**
-- Open the **Authentication** section and then navigate to **Sign in method**. Please enable Email/Password, Google and Facebook method depending on your need and click save.
+- Open the **Authentication** section and then navigate to **Sign in method**. Please enable Email/Password, Google, Facebook and Twitter method depending on your need and click save.
 - Navigate back to **Settings > Your apps**
 - Download "google-services.json" for Android
 - Download "GoogleService-Info.plist"for iOS
@@ -126,6 +127,16 @@ below **[REVERSE_CLIENT_ID]**
 	<key>FacebookDisplayName</key>
 	<string>[YOUR_FACEBOOOK_APP_NAME]</string>
 ```
+### Twitter
+#### Android
+Add following lines in **strings.xml** [flutter_project]/android/app/src/main/res/values
+```
+<string name="twitter_consumer_key" translatable="false">[YOUR_CONSUMER_KEY]</string>
+<string name="twitter_consumer_secret" translatable="false">fb[YOUR_CONSUMER_SECRET]</string>
+```
+#### iOS
+If you have already configured Google login for iOS following above steps, then you don't need to do anything else. If not, please follow the exact same step.
+
 ## Customization
 #### General
 - The order of login buttons depends on the sequence of `AuthProviders` you passed in `launchAuth()`. For example if you have Email, Google and Facebook auth configured and would like the Facebook to appear first, you can simply pass the `AuthProvider.facebook()` as first element in the providers list.
