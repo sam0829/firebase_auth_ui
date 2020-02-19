@@ -127,10 +127,19 @@ class FirebaseAuthUiPlugin(private val activity: Activity) : MethodCallHandler, 
         var instance = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
+
+        val logoResourceId = getLogoResourceId()
+        if (logoResourceId > 0)
+            instance = instance.setLogo(logoResourceId)
+
         if (tos?.isNotEmpty() == true && privacyPolicy?.isNotEmpty() == true)
             instance = instance.setTosAndPrivacyPolicyUrls(tos, privacyPolicy)
 
         activity.startActivityForResult(instance.build(),
                 AUTH_REQUEST_CODE)
+    }
+
+    private fun getLogoResourceId(): Int {
+        return activity.resources.getIdentifier("auth_ui_logo", "drawable", activity.packageName)
     }
 }
