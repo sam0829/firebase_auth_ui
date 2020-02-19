@@ -138,9 +138,14 @@ Add following lines in **strings.xml** [flutter_project]/android/app/src/main/re
 If you have already configured Google login for iOS following above steps, then you don't need to do anything else. If not, please follow the exact same step.
 
 ## Customization
-#### General
-- The order of login buttons depends on the sequence of `AuthProviders` you passed in `launchAuth()`. For example if you have Email, Google and Facebook auth configured and would like the Facebook to appear first, you can simply pass the `AuthProvider.facebook()` as first element in the providers list.
-#### Android
+#### Add logo
+Rename your icon to **auth_ui_logo.png** then follow below steps:
+##### Android
+- Place the png file in [flutter_project]/android/app/src/main/res/drawable
+##### iOS
+- Create an imageset with **auth_ui_logo** and place the png inside it. For creating the imageset, you can open the iOS project in XCode and then drag and drop the png image in Assets.
+
+#### Android specific
 - Actionbar title:
 Define your app's name in `strings.xml` and that'll appear as title in action bar.
 - Actionbar and status bar color:
@@ -150,3 +155,6 @@ Add following in your `colors.xml` [flutter_project]/android/app/src/main/res/va
 <color name="colorPrimaryDark">#[STATUSBAR_COLOR]</color>
 ```
 **Note:** If you don't have `colors.xml`, please create one.
+
+#### Misc
+- The order of login buttons depends on the sequence of `AuthProviders` you passed in `launchAuth()`. For example if you have Email, Google and Facebook auth configured and would like the Facebook to appear first, you can simply pass the `AuthProvider.facebook()` as first element in the providers list.
