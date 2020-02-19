@@ -1,3 +1,6 @@
+## 0.0.4
+* Add support for icon.
+
 ## 0.0.3
 * Add Twitter login support
 
