@@ -118,6 +118,8 @@ public class SwiftFirebaseAuthUiPlugin: NSObject, FlutterPlugin, FUIAuthDelegate
                         authProviders.append(FUIFacebookAuth())
                     } else if (provider == "twitter") {
                         authProviders.append(getTwitterAuthProvider())
+                    } else if (provider == "phone") {
+                        authProviders.append(FUIPhoneAuth(authUI: authUI!))
                     }
                 }
             }

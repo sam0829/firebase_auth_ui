@@ -1,4 +1,5 @@
 import 'package:firebase_auth_ui/providers.dart';
+import 'package:firebase_auth_ui/src/providers/phone_provider.dart';
 
 abstract class AuthProvider {
   AuthProvider({this.providerId});
@@ -21,5 +22,9 @@ abstract class AuthProvider {
 
   factory AuthProvider.twitter() {
     return TwitterProvider();
+  }
+
+  factory AuthProvider.phone() {
+    return PhoneProvider();
   }
 }
