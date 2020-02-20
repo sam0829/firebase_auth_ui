@@ -1,3 +1,7 @@
+## 1.0.0
+* Add Phone authentication support.
+This isn't huge update but as all major providers are now included, the version is bumped up to 1.0.0
+
 ## 0.0.4
 * Add support for icon.
 
