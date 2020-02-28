@@ -78,7 +78,8 @@ public class SwiftFirebaseAuthUiPlugin: NSObject, FlutterPlugin, FUIAuthDelegate
                 }
             }
 
-        public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        public func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+            let user = authDataResult?.user
             if (error != nil) {
                 if (UInt((error as NSError?)?.code ?? -12) == FUIAuthErrorCode.userCancelledSignIn.rawValue) {
                     result?(FlutterError(code: ERROR_USER_CANCELLED, message: "User cancelled the sign-in flow",
@@ -96,6 +97,7 @@ public class SwiftFirebaseAuthUiPlugin: NSObject, FlutterPlugin, FUIAuthDelegate
                     "photo_url": user?.photoURL?.absoluteString ?? "",
                     "phone_number": user?.phoneNumber ?? "",
                     "is_anonymous": user?.isAnonymous ?? false,
+                    "is_new_user": authDataResult?.additionalUserInfo?.isNewUser ?? false,
                 ]
                 result?(userDisctionary)
             }

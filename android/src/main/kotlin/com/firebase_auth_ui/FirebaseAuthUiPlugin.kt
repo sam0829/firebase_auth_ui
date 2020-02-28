@@ -66,6 +66,7 @@ class FirebaseAuthUiPlugin(private val activity: Activity) : MethodCallHandler, 
                     userMap["provider_id"] = user.providerId
                     userMap["photo_url"] = user.photoUrl?.toString() ?: ""
                     userMap["is_anonymous"] = user.isAnonymous
+                    userMap["is_new_user"] = response?.isNewUser ?: false
 
                     result?.success(userMap)
                 } else {

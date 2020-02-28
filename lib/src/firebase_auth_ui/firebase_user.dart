@@ -6,10 +6,11 @@ class FirebaseUser {
   String photoUri;
   String providerId;
   bool isAnonymous;
+  bool isNewUser;
 
   FirebaseUser(this.uid, this.displayName, this.email, this.phoneNumber,
       this.photoUri, this.providerId,
-      {this.isAnonymous = false});
+      {this.isAnonymous = false, this.isNewUser});
 
   Map<String, dynamic> toJSON() {
     return {
@@ -20,6 +21,7 @@ class FirebaseUser {
       "photoUri": photoUri,
       "providerId": providerId,
       "isAnonymous": isAnonymous,
+      "isNewUser": isNewUser,
     };
   }
 }

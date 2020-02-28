@@ -56,7 +56,8 @@ class FirebaseAuthUi {
         userMap["phone_number"] ?? "",
         userMap["photo_url"] ?? "",
         userMap["provider_id"] ?? "",
-        isAnonymous: userMap["is_anonymous"] ?? false);
+        isAnonymous: userMap["is_anonymous"] ?? false,
+        isNewUser: userMap["is_new_user"]);
   }
 
   List<String> _getProviders(List<AuthProvider> providers) {
