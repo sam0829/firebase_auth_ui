@@ -50,9 +50,18 @@ Field | Description |
  phoneNumber | Phone number of user |
  photoUri | URI of user's photo |
  providerId | Indicates through which provider user was authenticated. |
- isNewUser | Indicates if user is new |
+ metaData | Object of MetaData |
+ 
+`MetaData`
 
-Please note that above details may be null depending on the provider user used to sign and user's privacy settings on respective provider.
+Field | Description |
+ --- | --- |
+ creationTimestamp | Timestamp of user's creation |
+ lastSignInTimestamp | Timestamp of user's last sign in |
+
+**Notes:**
+- Above details may be null depending on the provider user used to sign and user's privacy settings on respective provider.
+- creationTimestamp seems to return wrong value sometimes on Android.
 
 If you want to have full `FirebaseUser` object then please add [firebase_auth](https://pub.dev/packages/firebase_auth) dependency. You can then use `FirebaseAuth.instance.currentUser()`.
 

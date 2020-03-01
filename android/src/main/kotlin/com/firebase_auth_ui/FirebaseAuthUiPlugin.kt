@@ -68,6 +68,14 @@ class FirebaseAuthUiPlugin(private val activity: Activity) : MethodCallHandler, 
                     userMap["is_anonymous"] = user.isAnonymous
                     userMap["is_new_user"] = response?.isNewUser ?: false
 
+                    // MetaData
+                    val metadataMap = hashMapOf<String, Any>()
+                    user.metadata?.let { metadata ->
+                        metadataMap["creation_timestamp"] = metadata.creationTimestamp
+                        metadataMap["last_sign_in_timestamp"] = metadata.lastSignInTimestamp
+                    }
+                    userMap["metadata"] = metadataMap
+
                     result?.success(userMap)
                 } else {
                     result?.error(ERROR_UNKNOWN, "Unknown error occurred.", null)

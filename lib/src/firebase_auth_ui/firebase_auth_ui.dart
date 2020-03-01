@@ -49,6 +49,11 @@ class FirebaseAuthUi {
   }
 
   FirebaseUser _getFirebaseUser(Map<dynamic, dynamic> userMap) {
+    MetaData metaData;
+    if (userMap?.containsKey("metadata") ?? false) {
+      metaData = MetaData(creationTimestamp: userMap["metadata"]["creation_timestamp"],
+      lastSignInTimestamp: userMap["metadata"]["last_sign_in_timestamp"]);
+    }
     return FirebaseUser(
         userMap["uid"] ?? "",
         userMap["display_name"] ?? "",
@@ -56,6 +61,7 @@ class FirebaseAuthUi {
         userMap["phone_number"] ?? "",
         userMap["photo_url"] ?? "",
         userMap["provider_id"] ?? "",
+        metaData,
         isAnonymous: userMap["is_anonymous"] ?? false,
         isNewUser: userMap["is_new_user"]);
   }

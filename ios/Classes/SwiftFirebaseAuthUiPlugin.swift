@@ -89,6 +89,23 @@ public class SwiftFirebaseAuthUiPlugin: NSObject, FlutterPlugin, FUIAuthDelegate
                                          details: nil))
                 }
             } else {
+                var createdTimeStamp = Int(user?.metadata.creationDate?.timeIntervalSince1970 ?? -1)
+                var lastSignInTimeStamp = Int(user?.metadata.lastSignInDate?.timeIntervalSince1970 ?? -1)
+
+                if createdTimeStamp != -1 {
+                    // convert to milliseconds to match with Android
+                    createdTimeStamp *= 1000
+                }
+
+                if lastSignInTimeStamp != -1 {
+                    // convert to milliseconds to match with Android
+                    lastSignInTimeStamp *= 1000
+                }
+
+                let metaDataDictionary: NSMutableDictionary = [
+                    "creation_timestamp": createdTimeStamp,
+                    "last_sign_in_timestamp": lastSignInTimeStamp,
+                ]
                 let userDisctionary : NSMutableDictionary = [
                     "display_name": user?.displayName ?? "",
                     "email": user?.email ?? "",
@@ -98,6 +115,7 @@ public class SwiftFirebaseAuthUiPlugin: NSObject, FlutterPlugin, FUIAuthDelegate
                     "phone_number": user?.phoneNumber ?? "",
                     "is_anonymous": user?.isAnonymous ?? false,
                     "is_new_user": authDataResult?.additionalUserInfo?.isNewUser ?? false,
+                    "metadata": metaDataDictionary,
                 ]
                 result?(userDisctionary)
             }
