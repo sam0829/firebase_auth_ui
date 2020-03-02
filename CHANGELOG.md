@@ -1,3 +1,8 @@
+## 1.0.1
+* Exposed `isNewUser` boolean to help identifying new users.
+* Exposed `MetaData` of logged in user.
+* Added `delete()` for deleting logged in user.
+
 ## 1.0.0
 * Add Phone authentication support.
 This isn't huge update but as all major providers are now included, the version is bumped up to 1.0.0
