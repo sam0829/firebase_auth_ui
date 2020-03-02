@@ -48,11 +48,18 @@ class FirebaseAuthUi {
     return Future.value(result);
   }
 
+  /// Delete user.
+  Future<bool> delete() async {
+    bool result = await _channel.invokeMethod('delete');
+    return Future.value(result);
+  }
+
   FirebaseUser _getFirebaseUser(Map<dynamic, dynamic> userMap) {
     MetaData metaData;
     if (userMap?.containsKey("metadata") ?? false) {
-      metaData = MetaData(creationTimestamp: userMap["metadata"]["creation_timestamp"],
-      lastSignInTimestamp: userMap["metadata"]["last_sign_in_timestamp"]);
+      metaData = MetaData(
+          creationTimestamp: userMap["metadata"]["creation_timestamp"],
+          lastSignInTimestamp: userMap["metadata"]["last_sign_in_timestamp"]);
     }
     return FirebaseUser(
         userMap["uid"] ?? "",

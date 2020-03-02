@@ -40,6 +40,13 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               _getErrorText(),
+              _user != null
+                  ? FlatButton(
+                      child: Text('Delete'),
+                      textColor: Colors.red,
+                      onPressed: () => _deleteUser(),
+                    )
+                  : Container()
             ],
           ),
         ),
@@ -76,6 +83,15 @@ class _MyAppState extends State<MyApp> {
       );
     } else {
       return Container();
+    }
+  }
+
+  void _deleteUser() async {
+    final result = await FirebaseAuthUi.instance().delete();
+    if (result) {
+      setState(() {
+        _user = null;
+      });
     }
   }
 

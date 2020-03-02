@@ -39,6 +39,13 @@ void logout() async {
 	// ...
 }
 ```
+##### Delete
+```
+void delete() async {
+	final result = await FirebaseAuthUi.instance().delete();
+	// ...
+}
+```
 
 Plugin returns `FirebaseUser` with following details:
 
@@ -50,6 +57,7 @@ Field | Description |
  phoneNumber | Phone number of user |
  photoUri | URI of user's photo |
  providerId | Indicates through which provider user was authenticated. |
+ isNewUser | Indicates if user is new |
  metaData | Object of MetaData |
  
 `MetaData`

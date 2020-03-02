@@ -112,6 +112,14 @@ class FirebaseAuthUiPlugin(private val activity: Activity) : MethodCallHandler, 
                     .addOnFailureListener {
                         result.success(false)
                     }
+            "delete" -> AuthUI.getInstance()
+                    .delete(activity)
+                    .addOnCompleteListener {
+                        result.success(it.isSuccessful)
+                    }
+                    .addOnFailureListener {
+                        result.success(false)
+                    }
             else -> result.notImplemented()
         }
     }

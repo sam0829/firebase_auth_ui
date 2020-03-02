@@ -75,6 +75,15 @@ public class SwiftFirebaseAuthUiPlugin: NSObject, FlutterPlugin, FUIAuthDelegate
                     } catch {
                         result(false)
                     }
+                } else if (call.method == "delete") {
+                    let user = authUI?.auth?.currentUser
+                    if user != nil {
+                        user?.delete(completion: { (error) in
+                            result(error == nil)
+                        })
+                    } else {
+                        result(false)
+                    }
                 }
             }
 
