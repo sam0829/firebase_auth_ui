@@ -43,7 +43,4 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.firebaseui:firebase-ui-auth:6.2.1'
     implementation 'com.facebook.android:facebook-android-sdk:5.5.1'
-    implementation('com.twitter.sdk.android:twitter:3.3.0@aar') {
-        transitive = true
-    }
 }
